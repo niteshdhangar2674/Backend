@@ -1,0 +1,305 @@
+2026-10-13 09:00:01 INFO [main] Application starting...
+2026-10-13 09:00:01 INFO [main] Loading application configuration
+2026-10-13 09:00:02 INFO [main] Configuration loaded successfully
+2026-10-13 09:00:02 INFO [database] Initializing database connection pool
+2026-10-13 09:00:03 INFO [database] Database connection established
+2026-10-13 09:00:03 DEBUG [database] Connection pool size: 10
+2026-10-13 09:00:04 INFO [cache] Connecting to Redis server
+2026-10-13 09:00:04 INFO [cache] Redis connection established
+2026-10-13 09:00:05 INFO [server] HTTP server initialized
+2026-10-13 09:00:05 INFO [server] Listening on port 8080
+2026-10-13 09:00:06 INFO [health] Health check passed
+2026-10-13 09:00:07 DEBUG [scheduler] Scheduled background jobs initialized
+2026-10-13 09:00:08 INFO [auth] Authentication service initialized
+2026-10-13 09:00:09 INFO [api] API routes registered successfully
+2026-10-13 09:00:10 INFO [main] Application startup completed
+2026-10-13 09:00:11 INFO [http] GET /api/health 200 12ms
+2026-10-13 09:00:12 DEBUG [http] Request ID: req-1001
+2026-10-13 09:00:13 INFO [http] GET /api/users 200 45ms
+2026-10-13 09:00:14 DEBUG [database] Executing query: SELECT users
+2026-10-13 09:00:15 INFO [database] Query completed in 8ms
+2026-10-13 09:00:16 INFO [http] GET /api/products 200 38ms
+2026-10-13 09:00:17 DEBUG [cache] Cache hit for products:list
+2026-10-13 09:00:18 INFO [http] GET /api/orders 200 52ms
+2026-10-13 09:00:19 DEBUG [database] Fetching orders for user 1042
+2026-10-13 09:00:20 INFO [auth] User 1042 authenticated successfully
+2026-10-13 09:00:21 INFO [http] POST /api/login 200 67ms
+2026-10-13 09:00:22 DEBUG [auth] Validating access token
+2026-10-13 09:00:23 INFO [auth] Access token validated
+2026-10-13 09:00:24 INFO [http] GET /api/profile 200 24ms
+2026-10-13 09:00:25 DEBUG [database] Loading profile for user 1042
+2026-10-13 09:00:26 INFO [database] Profile query completed in 11ms
+2026-10-13 09:00:27 INFO [http] GET /api/settings 200 31ms
+2026-10-13 09:00:28 DEBUG [cache] Cache miss for settings:user:1042
+2026-10-13 09:00:29 INFO [cache] Settings cached successfully
+2026-10-13 09:00:30 INFO [http] GET /api/notifications 200 42ms
+2026-10-13 09:00:31 DEBUG [database] Fetching unread notifications
+2026-10-13 09:00:32 INFO [http] GET /api/dashboard 200 73ms
+2026-10-13 09:00:33 INFO [metrics] Request count: 15
+2026-10-13 09:00:34 DEBUG [metrics] Average response time: 39ms
+2026-10-13 09:00:35 INFO [scheduler] Starting cleanup task
+2026-10-13 09:00:36 INFO [scheduler] Cleanup task completed
+2026-10-13 09:00:37 INFO [http] POST /api/cart 201 49ms
+2026-10-13 09:00:38 DEBUG [cart] Adding product 501 to cart
+2026-10-13 09:00:39 INFO [cart] Cart updated for user 1042
+2026-10-13 09:00:40 INFO [http] GET /api/cart 200 22ms
+2026-10-13 09:00:41 DEBUG [database] Fetching cart items
+2026-10-13 09:00:42 INFO [http] POST /api/cart/items 201 34ms
+2026-10-13 09:00:43 INFO [payment] Initializing payment session
+2026-10-13 09:00:44 DEBUG [payment] Validating payment request
+2026-10-13 09:00:45 INFO [payment] Payment session created: pay-2001
+2026-10-13 09:00:46 INFO [http] POST /api/checkout 200 88ms
+2026-10-13 09:00:47 DEBUG [payment] Payment status: pending
+2026-10-13 09:00:48 INFO [payment] Payment gateway responded successfully
+2026-10-13 09:00:49 INFO [http] POST /api/payment/confirm 200 61ms
+2026-10-13 09:00:50 INFO [payment] Payment completed: pay-2001
+2026-10-13 09:00:51 INFO [orders] Order created: ORD-5001
+2026-10-13 09:00:52 DEBUG [database] Persisting order ORD-5001
+2026-10-13 09:00:53 INFO [database] Order saved successfully
+2026-10-13 09:00:54 INFO [http] GET /api/orders/ORD-5001 200 27ms
+2026-10-13 09:00:55 DEBUG [orders] Loading order details
+2026-10-13 09:00:56 INFO [notifications] Sending order confirmation
+2026-10-13 09:00:57 INFO [notifications] Email queued successfully
+2026-10-13 09:00:58 DEBUG [email] Connecting to mail server
+2026-10-13 09:00:59 INFO [email] Email delivered successfully
+2026-10-13 09:01:00 INFO [http] GET /api/health 200 10ms
+2026-10-13 09:01:01 INFO [http] GET /api/products?page=2 200 43ms
+2026-10-13 09:01:02 DEBUG [database] Fetching products page 2
+2026-10-13 09:01:03 INFO [database] Retrieved 20 products
+2026-10-13 09:01:04 INFO [http] GET /api/categories 200 25ms
+2026-10-13 09:01:05 DEBUG [cache] Cache hit for categories:list
+2026-10-13 09:01:06 INFO [http] GET /api/search?q=laptop 200 56ms
+2026-10-13 09:01:07 DEBUG [search] Search query received: laptop
+2026-10-13 09:01:08 INFO [search] Found 12 matching products
+2026-10-13 09:01:09 INFO [http] GET /api/search?q=phone 200 48ms
+2026-10-13 09:01:10 DEBUG [search] Search query received: phone
+2026-10-13 09:01:11 INFO [search] Found 18 matching products
+2026-10-13 09:01:12 INFO [http] GET /api/reviews/501 200 32ms
+2026-10-13 09:01:13 DEBUG [database] Fetching reviews for product 501
+2026-10-13 09:01:14 INFO [http] POST /api/reviews 201 46ms
+2026-10-13 09:01:15 INFO [reviews] Review submitted by user 1042
+2026-10-13 09:01:16 DEBUG [reviews] Running content validation
+2026-10-13 09:01:17 INFO [reviews] Review validation completed
+2026-10-13 09:01:18 INFO [http] GET /api/wishlist 200 29ms
+2026-10-13 09:01:19 DEBUG [wishlist] Loading wishlist for user 1042
+2026-10-13 09:01:20 INFO [http] POST /api/wishlist 201 35ms
+2026-10-13 09:01:21 INFO [wishlist] Product 501 added to wishlist
+2026-10-13 09:01:22 INFO [http] DELETE /api/wishlist/501 204 19ms
+2026-10-13 09:01:23 DEBUG [wishlist] Removing product 501
+2026-10-13 09:01:24 INFO [wishlist] Wishlist updated successfully
+2026-10-13 09:01:25 INFO [http] GET /api/users/1042 200 26ms
+2026-10-13 09:01:26 DEBUG [database] Loading user record 1042
+2026-10-13 09:01:27 INFO [database] User record retrieved
+2026-10-13 09:01:28 INFO [http] PUT /api/users/1042 200 54ms
+2026-10-13 09:01:29 INFO [users] User profile updated successfully
+2026-10-13 09:01:30 DEBUG [users] Invalidating profile cache
+2026-10-13 09:01:31 INFO [cache] Profile cache invalidated
+2026-10-13 09:01:32 INFO [http] GET /api/reports/sales 200 96ms
+2026-10-13 09:01:33 DEBUG [reports] Generating sales report
+2026-10-13 09:01:34 INFO [reports] Sales report generated successfully
+2026-10-13 09:01:35 INFO [http] GET /api/analytics 200 81ms
+2026-10-13 09:01:36 DEBUG [analytics] Aggregating daily statistics
+2026-10-13 09:01:37 INFO [analytics] Analytics aggregation completed
+2026-10-13 09:01:38 INFO [http] POST /api/contact 201 39ms
+2026-10-13 09:01:39 INFO [contact] Contact form submitted
+2026-10-13 09:01:40 DEBUG [contact] Validating contact form fields
+2026-10-13 09:01:41 INFO [contact] Contact form validation passed
+2026-10-13 09:01:42 INFO [http] GET /api/faq 200 21ms
+2026-10-13 09:01:43 DEBUG [cache] Cache hit for faq:list
+2026-10-13 09:01:44 INFO [http] GET /api/coupons 200 33ms
+2026-10-13 09:01:45 DEBUG [database] Fetching active coupons
+2026-10-13 09:01:46 INFO [coupons] Retrieved 5 active coupons
+2026-10-13 09:01:47 INFO [http] POST /api/coupons/validate 200 28ms
+2026-10-13 09:01:48 DEBUG [coupons] Validating coupon SAVE10
+2026-10-13 09:01:49 INFO [coupons] Coupon SAVE10 is valid
+2026-10-13 09:01:50 INFO [http] GET /api/shipping/options 200 37ms
+2026-10-13 09:01:51 DEBUG [shipping] Calculating available shipping methods
+2026-10-13 09:01:52 INFO [shipping] Shipping options calculated
+2026-10-13 09:01:53 INFO [http] POST /api/shipping/estimate 200 41ms
+2026-10-13 09:01:54 INFO [shipping] Shipping estimate generated
+2026-10-13 09:01:55 INFO [http] GET /api/inventory/501 200 23ms
+2026-10-13 09:01:56 DEBUG [inventory] Checking stock for product 501
+2026-10-13 09:01:57 INFO [inventory] Stock available: 42 units
+2026-10-13 09:01:58 INFO [http] POST /api/inventory/reserve 200 47ms
+2026-10-13 09:01:59 INFO [inventory] Reserved 1 unit for order ORD-5001
+2026-10-13 09:02:00 INFO [http] GET /api/health 200 11ms
+2026-10-13 09:02:01 INFO [http] GET /api/products/9999 404 18ms
+2026-10-13 09:02:02 WARN [api] Product not found: 9999
+2026-10-13 09:02:03 INFO [http] POST /api/login 401 31ms
+2026-10-13 09:02:04 WARN [auth] Authentication failed for test-user
+2026-10-13 09:02:05 DEBUG [auth] Invalid credentials received
+2026-10-13 09:02:06 INFO [http] GET /api/admin 403 14ms
+2026-10-13 09:02:07 WARN [auth] Insufficient permissions for requested resource
+2026-10-13 09:02:08 INFO [http] GET /api/orders/invalid 400 16ms
+2026-10-13 09:02:09 WARN [api] Invalid order ID format
+2026-10-13 09:02:10 INFO [http] POST /api/reviews 400 24ms
+2026-10-13 09:02:11 WARN [reviews] Review submission failed validation
+2026-10-13 09:02:12 DEBUG [reviews] Missing required field: rating
+2026-10-13 09:02:13 INFO [http] GET /api/search?q=unknownitem 200 44ms
+2026-10-13 09:02:14 INFO [search] No results found for query
+2026-10-13 09:02:15 WARN [cache] Cache entry expired: products:list
+2026-10-13 09:02:16 INFO [cache] Refreshing expired cache entry
+2026-10-13 09:02:17 DEBUG [database] Rebuilding product cache
+2026-10-13 09:02:18 INFO [cache] Product cache refreshed
+2026-10-13 09:02:19 INFO [http] GET /api/notifications 200 48ms
+2026-10-13 09:02:20 WARN [notifications] Notification delivery delayed
+2026-10-13 09:02:21 DEBUG [notifications] Retrying delivery attempt 1
+2026-10-13 09:02:22 INFO [notifications] Notification queued for retry
+2026-10-13 09:02:23 INFO [http] GET /api/health 200 12ms
+2026-10-13 09:02:24 WARN [database] Connection pool utilization at 75%
+2026-10-13 09:02:25 DEBUG [database] Active connections: 8
+2026-10-13 09:02:26 INFO [database] Connection returned to pool
+2026-10-13 09:02:27 INFO [http] GET /api/products 200 63ms
+2026-10-13 09:02:28 WARN [api] Response time exceeded 50ms threshold
+2026-10-13 09:02:29 DEBUG [metrics] Recording slow request
+2026-10-13 09:02:30 INFO [metrics] Slow request metric recorded
+2026-10-13 09:02:31 INFO [http] POST /api/upload 413 22ms
+2026-10-13 09:02:32 WARN [upload] File upload rejected: size limit exceeded
+2026-10-13 09:02:33 DEBUG [upload] Maximum allowed size: 10485760 bytes
+2026-10-13 09:02:34 INFO [http] GET /api/config 401 13ms
+2026-10-13 09:02:35 WARN [auth] Missing authorization header
+2026-10-13 09:02:36 INFO [http] POST /api/payment/confirm 400 35ms
+2026-10-13 09:02:37 WARN [payment] Invalid payment confirmation payload
+2026-10-13 09:02:38 DEBUG [payment] Required field missing: transaction_id
+2026-10-13 09:02:39 INFO [http] GET /api/orders/ORD-5001 200 29ms
+2026-10-13 09:02:40 DEBUG [orders] Order status: processing
+2026-10-13 09:02:41 INFO [orders] Order status updated to shipped
+2026-10-13 09:02:42 INFO [notifications] Shipping notification queued
+2026-10-13 09:02:43 INFO [http] GET /api/orders/ORD-5001/tracking 200 34ms
+2026-10-13 09:02:44 DEBUG [shipping] Fetching tracking information
+2026-10-13 09:02:45 INFO [shipping] Tracking information retrieved
+2026-10-13 09:02:46 INFO [http] GET /api/inventory 200 46ms
+2026-10-13 09:02:47 WARN [inventory] Low stock detected for product 612
+2026-10-13 09:02:48 DEBUG [inventory] Current stock: 3 units
+2026-10-13 09:02:49 INFO [inventory] Low-stock alert queued
+2026-10-13 09:02:50 INFO [http] GET /api/health 200 10ms
+2026-10-13 09:02:51 INFO [scheduler] Starting inventory synchronization
+2026-10-13 09:02:52 DEBUG [scheduler] Processing inventory batch 1
+2026-10-13 09:02:53 INFO [scheduler] Inventory batch 1 completed
+2026-10-13 09:02:54 DEBUG [scheduler] Processing inventory batch 2
+2026-10-13 09:02:55 INFO [scheduler] Inventory batch 2 completed
+2026-10-13 09:02:56 INFO [scheduler] Inventory synchronization completed
+2026-10-13 09:02:57 INFO [http] GET /api/metrics 200 19ms
+2026-10-13 09:02:58 DEBUG [metrics] Collecting application performance metrics
+2026-10-13 09:02:59 INFO [metrics] Metrics collection completed
+2026-10-13 09:03:00 INFO [http] GET /api/health 200 11ms
+2026-10-13 09:03:01 ERROR [database] Database query timed out after 5000ms
+2026-10-13 09:03:02 WARN [database] Retrying database operation
+2026-10-13 09:03:03 DEBUG [database] Retry attempt: 1
+2026-10-13 09:03:04 INFO [database] Database connection recovered
+2026-10-13 09:03:05 INFO [http] GET /api/reports/sales 200 105ms
+2026-10-13 09:03:06 WARN [reports] Report generation exceeded expected duration
+2026-10-13 09:03:07 DEBUG [reports] Report rows processed: 1250
+2026-10-13 09:03:08 INFO [reports] Report generation completed
+2026-10-13 09:03:09 ERROR [email] SMTP connection temporarily unavailable
+2026-10-13 09:03:10 WARN [email] Scheduling email delivery retry
+2026-10-13 09:03:11 DEBUG [email] Retry attempt: 1
+2026-10-13 09:03:12 INFO [email] SMTP connection restored
+2026-10-13 09:03:13 INFO [email] Pending emails delivered successfully
+2026-10-13 09:03:14 INFO [http] POST /api/contact 201 42ms
+2026-10-13 09:03:15 DEBUG [contact] Contact request assigned ID CNT-3001
+2026-10-13 09:03:16 INFO [contact] Contact request stored successfully
+2026-10-13 09:03:17 ERROR [cache] Cache refresh failed for analytics:summary
+2026-10-13 09:03:18 WARN [cache] Falling back to database query
+2026-10-13 09:03:19 INFO [database] Analytics summary retrieved
+2026-10-13 09:03:20 INFO [cache] Cache entry rebuilt successfully
+2026-10-13 09:03:21 INFO [http] GET /api/analytics 200 94ms
+2026-10-13 09:03:22 DEBUG [analytics] Summary response generated
+2026-10-13 09:03:23 ERROR [payment] Payment gateway returned HTTP 503
+2026-10-13 09:03:24 WARN [payment] Payment marked for retry
+2026-10-13 09:03:25 DEBUG [payment] Retry scheduled in 30 seconds
+2026-10-13 09:03:26 INFO [payment] Retry task registered
+2026-10-13 09:03:27 INFO [http] GET /api/health 200 12ms
+2026-10-13 09:03:28 WARN [server] Memory usage reached 78%
+2026-10-13 09:03:29 DEBUG [metrics] Heap usage: 624MB
+2026-10-13 09:03:30 INFO [metrics] Memory metrics recorded
+2026-10-13 09:03:31 ERROR [upload] Temporary storage unavailable
+2026-10-13 09:03:32 WARN [upload] Upload request rejected temporarily
+2026-10-13 09:03:33 INFO [upload] Temporary storage connection restored
+2026-10-13 09:03:34 INFO [http] POST /api/upload 201 76ms
+2026-10-13 09:03:35 DEBUG [upload] File metadata stored successfully
+2026-10-13 09:03:36 ERROR [auth] Token validation service timed out
+2026-10-13 09:03:37 WARN [auth] Authentication request failed safely
+2026-10-13 09:03:38 INFO [auth] Token validation service recovered
+2026-10-13 09:03:39 INFO [http] GET /api/profile 200 31ms
+2026-10-13 09:03:40 DEBUG [auth] User session validated
+2026-10-13 09:03:41 ERROR [database] Transaction rolled back
+2026-10-13 09:03:42 WARN [orders] Order update transaction failed
+2026-10-13 09:03:43 DEBUG [database] Transaction rollback completed
+2026-10-13 09:03:44 INFO [orders] Order update queued for retry
+2026-10-13 09:03:45 INFO [http] GET /api/orders/ORD-5001 200 33ms
+2026-10-13 09:03:46 DEBUG [orders] Order status remains unchanged
+2026-10-13 09:03:47 INFO [scheduler] Processing pending order updates
+2026-10-13 09:03:48 INFO [orders] Order update completed successfully
+2026-10-13 09:03:49 INFO [notifications] Order status notification sent
+2026-10-13 09:03:50 INFO [http] GET /api/health 200 10ms
+2026-10-13 09:03:51 DEBUG [database] Active connections: 4
+2026-10-13 09:03:52 INFO [database] Connection pool utilization: 40%
+2026-10-13 09:03:53 INFO [cache] Cache hit ratio: 92%
+2026-10-13 09:03:54 DEBUG [metrics] Total requests processed: 245
+2026-10-13 09:03:55 INFO [metrics] Error rate: 1.6%
+2026-10-13 09:03:56 INFO [metrics] Average response time: 41ms
+2026-10-13 09:03:57 WARN [metrics] Error rate exceeded warning threshold
+2026-10-13 09:03:58 DEBUG [metrics] Generating diagnostic summary
+2026-10-13 09:03:59 INFO [metrics] Diagnostic summary generated
+2026-10-13 09:04:00 INFO [scheduler] Starting scheduled database maintenance
+2026-10-13 09:04:01 DEBUG [database] Checking table statistics
+2026-10-13 09:04:02 INFO [database] Table statistics checked
+2026-10-13 09:04:03 DEBUG [database] Analyzing query performance
+2026-10-13 09:04:04 INFO [database] Query analysis completed
+2026-10-13 09:04:05 INFO [scheduler] Database maintenance completed
+2026-10-13 09:04:06 INFO [http] GET /api/health 200 11ms
+2026-10-13 09:04:07 INFO [http] GET /api/products 200 36ms
+2026-10-13 09:04:08 DEBUG [cache] Cache hit for products:list
+2026-10-13 09:04:09 INFO [http] GET /api/categories 200 24ms
+2026-10-13 09:04:10 DEBUG [cache] Cache hit for categories:list
+2026-10-13 09:04:11 INFO [http] GET /api/dashboard 200 58ms
+2026-10-13 09:04:12 DEBUG [analytics] Dashboard data retrieved from cache
+2026-10-13 09:04:13 INFO [http] GET /api/notifications 200 29ms
+2026-10-13 09:04:14 DEBUG [notifications] Unread notification count: 2
+2026-10-13 09:04:15 INFO [http] POST /api/logout 200 18ms
+2026-10-13 09:04:16 INFO [auth] User 1042 logged out successfully
+2026-10-13 09:04:17 DEBUG [auth] Session invalidated
+2026-10-13 09:04:18 INFO [cache] User session cache cleared
+2026-10-13 09:04:19 INFO [http] GET /api/health 200 10ms
+2026-10-13 09:04:20 INFO [scheduler] Background job queue checked
+2026-10-13 09:04:21 DEBUG [scheduler] Pending jobs: 0
+2026-10-13 09:04:22 INFO [scheduler] No pending jobs to process
+2026-10-13 09:04:23 INFO [database] Database connection pool healthy
+2026-10-13 09:04:24 INFO [cache] Redis connection healthy
+2026-10-13 09:04:25 INFO [server] Active HTTP connections: 12
+2026-10-13 09:04:26 DEBUG [server] Worker threads active: 4
+2026-10-13 09:04:27 INFO [metrics] CPU usage: 34%
+2026-10-13 09:04:28 INFO [metrics] Memory usage: 61%
+2026-10-13 09:04:29 INFO [metrics] Disk usage: 48%
+2026-10-13 09:04:30 DEBUG [metrics] System metrics collected
+2026-10-13 09:04:31 INFO [http] GET /api/health 200 11ms
+2026-10-13 09:04:32 INFO [http] GET /api/products 200 39ms
+2026-10-13 09:04:33 DEBUG [database] Product query completed in 9ms
+2026-10-13 09:04:34 INFO [http] GET /api/orders 200 43ms
+2026-10-13 09:04:35 DEBUG [database] Order query completed in 12ms
+2026-10-13 09:04:36 INFO [http] GET /api/profile 401 15ms
+2026-10-13 09:04:37 WARN [auth] Unauthorized request: session expired
+2026-10-13 09:04:38 INFO [http] POST /api/login 200 58ms
+2026-10-13 09:04:39 INFO [auth] New session created for user 1042
+2026-10-13 09:04:40 DEBUG [auth] Session expiration set to 3600 seconds
+2026-10-13 09:04:41 INFO [http] GET /api/profile 200 23ms
+2026-10-13 09:04:42 DEBUG [database] User profile retrieved successfully
+2026-10-13 09:04:43 INFO [http] GET /api/settings 200 26ms
+2026-10-13 09:04:44 DEBUG [cache] Settings cache hit
+2026-10-13 09:04:45 INFO [http] GET /api/health 200 10ms
+2026-10-13 09:04:46 INFO [scheduler] Starting session cleanup task
+2026-10-13 09:04:47 DEBUG [scheduler] Expired sessions found: 3
+2026-10-13 09:04:48 INFO [auth] Removed 3 expired sessions
+2026-10-13 09:04:49 INFO [scheduler] Session cleanup completed
+2026-10-13 09:04:50 INFO [server] Application running normally
+2026-10-13 09:04:51 DEBUG [metrics] Total requests processed: 312
+2026-10-13 09:04:52 INFO [metrics] Successful requests: 301
+2026-10-13 09:04:53 WARN [metrics] Failed requests: 11
+2026-10-13 09:04:54 INFO [metrics] Performance summary generated
+2026-10-13 09:04:55 INFO [database] Database response time within limits
+2026-10-13 09:04:56 INFO [cache] Cache response time within limits
+2026-10-13 09:04:57 DEBUG [server] Running final health checks
+2026-10-13 09:04:58 INFO [health] All critical services operational
+2026-10-13 09:04:59 INFO [scheduler] Next scheduled task: 09:05:00
+2026-10-13 09:05:00 INFO [main] Application status: RUNNING
